@@ -139,8 +139,7 @@ def main(folder: Path):
     for folder_item in FOLDERS[::-1]:
         handle_folder(folder_item)
 
-
-if __name__ == '__main__':
+def parse_and_scan_folder():
     if len(sys.argv) > 1:
         folder_for_scan = Path(sys.argv[1])
         if folder_for_scan.exists() and folder_for_scan.is_dir():
@@ -149,3 +148,8 @@ if __name__ == '__main__':
             print(f"'{folder_for_scan}' is not a valid directory.")
     else:
         print("Please provide the folder to be scanned as an argument.")
+
+if __name__ == '__main__':
+    parse_and_scan_folder()
+
+
