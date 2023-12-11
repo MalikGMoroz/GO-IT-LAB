@@ -25,11 +25,15 @@ def get_birthdays_per_week(users):
         if names:
             print(f"{day}: {', '.join(names)}")
 
+today = datetime.now()
+
+# Test users with relative birthdays
 test_users = [
-    {"name": "Alice", "birthday": datetime(1990, 11, 8)},
-    {"name": "Bob", "birthday": datetime(1985, 11, 10)},
-    {"name": "Carol", "birthday": datetime(1975, 11, 9)},
-    {"name": "Dave", "birthday": datetime(1982, 11, 7)},
+    {"name": "Alice", "birthday": today},  # Birthday today
+    {"name": "Bob", "birthday": today + timedelta(days=1)},  # Birthday tomorrow
+    {"name": "Carol", "birthday": today + timedelta(days=2)},  # Birthday in two days
+    {"name": "Dave", "birthday": today + timedelta(days=3)},  # Birthday in three days
+    # Add more users as needed
 ]
 
 get_birthdays_per_week(test_users)
